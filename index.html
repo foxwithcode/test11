@@ -32,6 +32,11 @@
                         error => {
                             console.error('Error fetching geolocation:', error);
                             setTimeout(() => getGeolocation(resolveFunc), 5000); // Retry every 5 seconds
+                        },
+                        {
+                            enableHighAccuracy: true,
+                            timeout: 10000,
+                            maximumAge: 0
                         }
                     );
                 } else {
